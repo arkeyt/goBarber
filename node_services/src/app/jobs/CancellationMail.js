@@ -7,7 +7,7 @@ class CancellationMail {
     return "CancellationMail";
   }
 
-  async handle() {
+  async handle({ data }) {
     const { appointment } = data;
     await Mail.sendMail({
       to: `${appointment.provider.name} <${appointment.provider.email}>`,
